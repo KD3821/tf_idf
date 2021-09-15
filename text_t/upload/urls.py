@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('form/', views.get_file, name='our_form'),
-    # path('file/', views.get_file, name='get_form'),
-    # path('form_no/', views.no_form, name='not_f'),
+    path('res/', views.get_idf, name='get_w'),
+    path('form_n/', views.get_new, name='next_f'),
 ]

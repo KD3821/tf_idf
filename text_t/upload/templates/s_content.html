@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,18 @@
     <title>Title</title>
 </head>
 <body>
-
-{{ content }}
-
+    <li><a href="{% url 'next_f'%}">Вернуться на страницу загрузки файлов</a></li>
+    <p>Таблица с результатом:</p>
+    <table>
+        <tr><td>СЛОВО</td>
+                <td>TF</td>
+                <td>IDF</td></tr>
+        {% for word in words_list %}
+            <tr><td>{{ word.word_text }} </td>
+                <td>{{ word.tf_amount }}</td>
+                <td>{{ word.idf_amount }}</td></tr>
+        {% endfor %}
+    </table>
+    <li><a href="{% url 'next_f'%}">Вернуться на страницу загрузки файлов</a></li>
 </body>
 </html>

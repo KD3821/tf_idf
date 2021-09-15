@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Файл успешно загружен! <br> Вы уже можете запросить таблицу с результатом, либо загрузить еще несколько файлов поочередно:</p>
+    <br>
+    <form action="{% url 'our_form' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Upload File">
+    </form>
+    <br>
+    <br>
+    <form action="{% url 'get_w' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="submit" value="Get Table">
+    </form>
+    <br>
+    <li><a href="{% url 'next_f'%}">Сбросить и загрузить файл(ы) заново</a></li>
+</body>
+</html>
